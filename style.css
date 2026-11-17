@@ -1,0 +1,370 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #eef3f9;
+    color: #1e293b;
+    padding: 20px;
+}
+
+.dashboard-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 230px 1.4fr 0.85fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+        "header header header header"
+        "nav main main main"
+        "nav aside section1 section2"
+        "nav footer footer footer";
+    gap: 18px;
+}
+
+header {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+}
+
+header h1 {
+    color: #0b4a9f;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.search-form input {
+    width: 300px;
+    padding: 9px 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    background-color: #ffffff;
+    font-size: 13px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.search-form input:focus {
+    border-color: #0b4a9f;
+}
+
+nav {
+    grid-area: nav;
+    background-color: #0b4a9f;
+    border-radius: 8px;
+    padding: 25px 0;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.nav-link {
+    display: block;
+    padding: 12px 35px;
+    color: #e2e8f0;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.nav-link.active {
+    background-color: #163b6d;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.sign-out-item {
+    margin-top: 15px;
+}
+
+.nav-link.sign-out {
+    color: #fca5a5;
+    font-weight: 600;
+}
+
+.nav-link.sign-out:hover {
+    background-color: rgba(239, 68, 68, 0.2);
+    color: #fecaca;
+}
+
+main {
+    grid-area: main;
+    background-color: #0b4a9f;
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 28px 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.hero-text h2 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.35;
+    margin-bottom: 12px;
+}
+
+.hero-text p {
+    font-size: 13px;
+    color: #dbeafe;
+    max-width: 520px;
+    line-height: 1.5;
+}
+
+.hero-avatar {
+    width: 90px;
+    height: 90px;
+    flex-shrink: 0;
+}
+
+.hero-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    border: 2px solid transparent;
+    transition: background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Efek warna sorotan saat menu di sidebar diklik */
+.card.highlight-box {
+    background-color: #dbeafe;
+    border-color: #0b4a9f;
+    box-shadow: 0 0 15px rgba(11, 74, 159, 0.25);
+}
+
+.card h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 16px;
+}
+
+aside {
+    grid-area: aside;
+}
+
+.chart-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chart-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.section-1 {
+    grid-area: section1;
+}
+
+.section-2 {
+    grid-area: section2;
+}
+
+.item-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.list-box {
+    background-color: #f1f5f9;
+    padding: 11px 14px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    transition: transform 0.15s ease;
+}
+
+.list-box:hover {
+    background-color: #e2e8f0;
+}
+
+.list-box strong {
+    font-size: 12.5px;
+    color: #0f172a;
+}
+
+.list-box span {
+    font-size: 11.5px;
+    color: #64748b;
+}
+
+.list-box .date-text {
+    color: #0b4a9f;
+    font-weight: 500;
+}
+
+footer {
+    grid-area: footer;
+}
+
+.lampiran-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.lampiran-box {
+    background-color: #f1f5f9;
+    padding: 12px 18px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.lampiran-box p {
+    font-size: 12.5px;
+    color: #334155;
+}
+
+.doc-link {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #0b4a9f;
+    text-decoration: underline;
+}
+
+.doc-link:hover {
+    color: #1d4ed8;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 23, 42, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 420px;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.close-btn {
+    position: absolute;
+    right: 18px;
+    top: 12px;
+    font-size: 22px;
+    cursor: pointer;
+    color: #64748b;
+}
+
+.modal-content h3 {
+    color: #0b4a9f;
+    margin-bottom: 10px;
+}
+
+.modal-content p {
+    font-size: 14px;
+    color: #475569;
+    line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+    .dashboard-container {
+        grid-template-columns: 200px 1fr 1fr;
+        grid-template-areas:
+            "header header header"
+            "nav main main"
+            "nav aside aside"
+            "nav section1 section2"
+            "nav footer footer";
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "nav"
+            "main"
+            "aside"
+            "section1"
+            "section2"
+            "footer";
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .search-form,
+    .search-form input {
+        width: 100%;
+    }
+
+    nav {
+        padding: 10px;
+    }
+
+    .nav-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-link {
+        padding: 8px 14px;
+        border-radius: 5px;
+    }
+
+    .sign-out-item {
+        margin-top: 0;
+    }
+
+    main {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 15px;
+    }
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Dashboard - Project UTS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- HEADER -->
+        <header>
+            <h1>Royal Dashboard</h1>
+            <form class="search-form" onsubmit="return false;">
+                <input type="text" id="searchInput" placeholder="Cari Kelas, Dokumen, Aktifitas...">
+            </form>
+        </header>
+
+        <!-- SIDEBAR NAVIGATION -->
+        <nav>
+            <ul class="nav-list">
+                <li><a href="#" class="nav-link active" data-title="Selamat Datang, Dinda Khalilah">Home</a></li>
+                <li><a href="#" class="nav-link" data-title="Data Mahasiswa">Mahasiswa</a></li>
+                <li><a href="#kelas-section" class="nav-link" data-title="Daftar Kelas">Kelas</a></li>
+                <li><a href="#aktifitas-section" class="nav-link" data-title="Aktifitas Perkuliahan">Aktifitas</a></li>
+                <li><a href="#statistik-section" class="nav-link" data-title="Statistik Akademik">Statistik</a></li>
+                <li><a href="#lampiran-section" class="nav-link" data-title="Dokumen & Materi">Dokumen</a></li>
+                <li><a href="#" class="nav-link" data-title="Pengaturan Akun">Settings</a></li>
+                <li class="sign-out-item"><a href="#" class="nav-link sign-out" id="signOutBtn">Sign Out</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <div class="hero-text">
+                <h2 id="welcomeTitle">Selamat Datang, Dinda Khalilah<br>Kelas SI-3D</h2>
+                <p>Kamu memiliki Statistik, 3 Progres Kelas, 4 Aktifitas Selanjutnya dan 3 Lampiran Dokumen yang ada pada aplikasi ini.</p>
+            </div>
+            <div class="hero-avatar">
+                <img src="gambar/WhatsApp Image 2026-07-02 at 11.37.36.jpeg" alt="Foto Profil Mahasiswa">
+            </div>
+        </main>
+        
+        <!-- BAGIAN STATISTIK MAHASISWA -->
+        <aside class="card" id="statistik-section">
+            <div class="chart-wrapper">
+                <img src="gambar/Chart_Statistik.svg" alt="Statistik Mahasiswa" class="chart-img">
+            </div>
+        </aside>
+
+        <!-- BAGIAN PROGRES KELAS -->
+        <section class="card section-1" id="kelas-section">
+            <h3>Progres Kelas</h3>
+            <div class="item-list">
+                <div class="list-box searchable-item">
+                    <strong>Matakuliah A</strong>
+                    <span>78 Pendaftar</span>
+                </div>
+                <div class="list-box searchable-item">
+                    <strong>Matakuliah B</strong>
+                    <span>30 Pendaftar</span>
+                </div>
+                <div class="list-box searchable-item">
+                    <strong>Matakuliah C</strong>
+                    <span>40 Pendaftar</span>
+                </div>
+                <div class="list-box searchable-item">
+                    <strong>Matakuliah D</strong>
+                    <span>10 Pendaftar</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- BAGIAN AKTIFITAS SELANJUTNYA -->
+        <section class="card section-2" id="aktifitas-section">
+            <h3>Aktifitas Selanjutnya</h3>
+            <div class="item-list">
+                <div class="list-box searchable-item">
+                    <strong>Perkuliahan Daring 1</strong>
+                    <span class="date-text">Senin, 15 Januari 2025</span>
+                </div>
+                <div class="list-box searchable-item">
+                    <strong>Perkuliahan Daring 1</strong>
+                    <span class="date-text">Selasa, 15 Februari 2025</span>
+                </div>
+                <div class="list-box searchable-item">
+                    <strong>Perkuliahan Daring 1</strong>
+                    <span class="date-text">Rabu, 15 Maret 2025</span>
+                </div>
+                <div class="list-box searchable-item">
+                    <strong>Perkuliahan Daring 1</strong>
+                    <span class="date-text">Kamis, 15 April 2025</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- BAGIAN LAMPIRAN -->
+        <footer class="card" id="lampiran-section">
+            <h3>Lampiran</h3>
+            <div class="lampiran-list">
+                <div class="lampiran-box searchable-item">
+                    <p><strong>Lampiran Dokumen 1</strong> - Matakuliah A | Tugas Bersama Perkuliahan Daring</p>
+                    <a href="#" class="doc-link" data-doc="Lampiran Dokumen 1 - Matakuliah A">Lihat Dokumen</a>
+                </div>
+                <div class="lampiran-box searchable-item">
+                    <p><strong>Lampiran Dokumen 2</strong> - Matakuliah B | Tugas Bersama Perkuliahan Daring</p>
+                    <a href="#" class="doc-link" data-doc="Lampiran Dokumen 2 - Matakuliah B">Lihat Dokumen</a>
+                </div>
+                <div class="lampiran-box searchable-item">
+                    <p><strong>Lampiran Dokumen 3</strong> - Matakuliah C | Tugas Bersama Perkuliahan Daring</p>
+                    <a href="#" class="doc-link" data-doc="Lampiran Dokumen 3 - Matakuliah C">Lihat Dokumen</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div id="docModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3 id="modalTitle">Detail Dokumen</h3>
+            <p id="modalBody">Memuat pratinjau dokumen...</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
